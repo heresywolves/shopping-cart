@@ -8,11 +8,9 @@ const ShoppingCart = () => {
     items,
   } = useCart();
 
-
   useEffect(() => {
     console.log('cartItems - ' + items);
   }, [items]);
-
 
   return (
     <div>
