@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
 import { useCart } from './CartContext'
+import QuantitySelector from './QuantitySelector'
 
 function App() {
   const [products, setProducts] = useState(null)
@@ -45,6 +46,7 @@ function App() {
               <p className='item-price'>{'$' + item.price}</p>
               <p className='item-rating'>{'Rating: ' + item.rating.rate}</p>
               <button onClick={() => {addToCart(item)}}>Add to Cart</button>
+              <QuantitySelector/>
             </div>
           )
         })
