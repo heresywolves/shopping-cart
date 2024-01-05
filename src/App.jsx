@@ -3,26 +3,33 @@ import './App.css'
 import { Link } from 'react-router-dom'
 import { useCart } from './CartContext'
 import QuantitySelector from './QuantitySelector'
+import { useProducts } from './ProductsContext'
 
 function App() {
-  const [products, setProducts] = useState(null)
+  // const [products, setProducts] = useState(null)
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const { handleAddItemToCart } = useCart();
+  const { handleAddProducts, products } = useProducts(); 
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products', { mode: "cors" })
-      .then((responce) => {
-        if (responce.status >= 400) {
-          throw new Error('server error');
-        }
-        return responce.json()
-      })
-      .then((responce) => setProducts(responce))
-      .catch((error) => setError(error))
-      .finally(() => setLoading(false));
-  }, []);
+      if (!products || products.length === 0) {
+        console.log("Fetching new data...");
+        fetch('https://fakestoreapi.com/products', { mode: "cors" })
+          .then((responce) => {
+            if (responce.status >= 400) {
+              throw new Error('server error');
+            }
+            return responce.json()
+          })
+          .then((responce) => handleAddProducts(responce))
+          .catch((error) => setError(error))
+          .finally(() => setLoading(false));
+      } else {
+        setLoading(false);
+      }
+  }, [handleAddProducts, products]);
 
   const addToCart = (item) => {
     console.log('Adding item: ' + JSON.stringify(item));

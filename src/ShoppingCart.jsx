@@ -11,6 +11,13 @@ const ShoppingCart = () => {
 
   useEffect(() => {
     console.log('cartItems - ' + items);
+
+    // Check for duplicate keys
+    const itemIds = items.map((item) => item.id);
+    const hasDuplicates = new Set(itemIds).size !== itemIds.length;
+    if (hasDuplicates) {
+      console.warn('Duplicate keys found in items array:', itemIds);
+    }
   }, [items]);
 
   return (
