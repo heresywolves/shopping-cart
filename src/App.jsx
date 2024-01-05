@@ -46,7 +46,7 @@ function App() {
               <p className='item-price'>{'$' + item.price}</p>
               <p className='item-rating'>{'Rating: ' + item.rating.rate}</p>
               <button onClick={() => {addToCart(item)}}>Add to Cart</button>
-              <QuantitySelector/>
+              <QuantitySelector item={item} />
             </div>
           )
         })

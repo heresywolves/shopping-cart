@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useCart } from "./CartContext";
 import { useEffect } from "react";
+import QuantitySelector from "./QuantitySelector";
 
 const ShoppingCart = () => {
 
@@ -22,6 +23,7 @@ const ShoppingCart = () => {
               <li key={item.id}>
                 <p>{item.title}</p>
                 <p>{'$' + item.price}</p>
+                <QuantitySelector item={item} />
               </li>
             )
           })}
