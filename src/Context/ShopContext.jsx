@@ -38,6 +38,17 @@ function ShopContextProvider({ children }) {
     setCartItems((prev) => ({...prev, [itemId]: 0}));
   }
 
+  const isCartEmpty = () => {
+    if (cartItems) {
+      for (const [key, value] of Object.entries(cartItems)) {
+      if (value > 0) {
+        return false;
+      } 
+      }
+      return true;
+    }
+  }
+
   const contextValue = {
     cartItems,
     addToCart,
@@ -45,6 +56,7 @@ function ShopContextProvider({ children }) {
     populateCartStructure,
     setQty,
     nullifyQty,
+    isCartEmpty
   }
 
   return (
