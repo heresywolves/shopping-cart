@@ -1,4 +1,5 @@
 import './ProductCard.css'
+import AddToCartButton from './AddToCartButton';
 
 function ProductCard({item}) {
   return (
@@ -9,6 +10,7 @@ function ProductCard({item}) {
       <p><b>{item.price}</b></p>
       <p>{item.description}</p>
       <p>{'Rating: ' + item.rating.rate}</p>
+      <AddToCartButton itemId={item.id} />
     </div>
   )
 }
