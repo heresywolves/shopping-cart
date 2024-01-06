@@ -3,6 +3,7 @@ import { ShopContext } from "../Context/ShopContext";
 import { useContext } from "react";
 import products from "../products";
 import ProductCard from "./ProductCard";
+import calcCartTotal from "../utils/calcCartTotal";
 
 const ShoppingCart = () => {
 
@@ -29,6 +30,7 @@ const ShoppingCart = () => {
           )
         }
       })}
+      <p className="total">{'Total: $' + calcCartTotal()}</p>
     </div>
   )
 };
