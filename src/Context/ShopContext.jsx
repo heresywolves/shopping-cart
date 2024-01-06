@@ -31,7 +31,11 @@ function ShopContextProvider({ children }) {
   }
 
   const setQty = (itemId, qty) => {
-    setCartItems((prev) => ({...prev, [itemId]: qty}))
+    setCartItems((prev) => ({...prev, [itemId]: qty}));
+  }
+
+  const nullifyQty = (itemId) => {
+    setCartItems((prev) => ({...prev, [itemId]: 0}));
   }
 
   const contextValue = {
@@ -40,6 +44,7 @@ function ShopContextProvider({ children }) {
     subtractFromCart,
     populateCartStructure,
     setQty,
+    nullifyQty,
   }
 
   return (

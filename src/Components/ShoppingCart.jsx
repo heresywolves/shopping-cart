@@ -7,11 +7,13 @@ import ProductCard from "./ProductCard";
 const ShoppingCart = () => {
 
   const { 
-    addToCart,
-    subtractFromCart, 
     cartItems,
-    setQty,
+    nullifyQty,
   } = useContext(ShopContext);
+
+  function handleRemoveItem(itemId) {
+    nullifyQty(itemId);
+  }
 
   return (
     <div>
@@ -20,7 +22,10 @@ const ShoppingCart = () => {
       {products.map((item) => {
         if (cartItems[item.id] > 0) {
           return (
-            <ProductCard key={item.id} item={item}/>
+            <div key={item.id}>
+              <ProductCard className="product-card" key={item.id} item={item}/>
+              <button onClick={() => handleRemoveItem(item.id)}>x Remove Item</button>
+            </div>
           )
         }
       })}
