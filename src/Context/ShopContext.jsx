@@ -30,11 +30,16 @@ function ShopContextProvider({ children }) {
     setCartItems(cart);
   }
 
+  const setQty = (itemId, qty) => {
+    setCartItems((prev) => ({...prev, [itemId]: qty}))
+  }
+
   const contextValue = {
     cartItems,
     addToCart,
     subtractFromCart,
-    populateCartStructure
+    populateCartStructure,
+    setQty,
   }
 
   return (
