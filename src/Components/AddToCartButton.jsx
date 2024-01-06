@@ -3,12 +3,23 @@ import { useContext } from "react";
 
 
 function AddToCartButton({itemId}) {
-  const { addToCart } = useContext(ShopContext);
+  const { addToCart, cartItems } = useContext(ShopContext);
+  let itemQty = 0;
+
+  for (const [key, value] of Object.entries(cartItems)) {
+    if (key == itemId) {
+      itemQty = value;
+    }
+  }
+
   function handleAddToCart(e) {
     addToCart(itemId);
   }
   return (
-    <button onClick={handleAddToCart}>Add to Cart</button>
+    <>
+      <button onClick={handleAddToCart}>Add to Cart</button>
+      <p>{'Quantity: ' + itemQty}</p>
+    </>
   )
 }
 
