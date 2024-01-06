@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import App from './Components/App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ShoppingCart from './ShoppingCart.jsx';
+import ShoppingCart from './Components/ShoppingCart.jsx';
 
 const router = createBrowserRouter([
   {

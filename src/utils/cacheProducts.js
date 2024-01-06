@@ -1,5 +1,7 @@
 import products from "../products";
 
 export default function cacheProducts(fetchResponce) {
-  products.push(...fetchResponce);
+  if (products.length === 0) {
+    products.push(...fetchResponce);
+  }
 }
