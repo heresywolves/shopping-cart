@@ -1,14 +1,16 @@
 import './App.css'
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import products from '../products';
 import cacheProducts from '../utils/cacheProducts';
 import ProductCard from './ProductCard';
+import { ShopContext } from '../Context/ShopContext';
 
 function App() {
 
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const { populateCartStructure } = useContext(ShopContext);
 
   useEffect(() => {
     // Fetch data only if it hasn't been fetched and cached
@@ -24,6 +26,7 @@ function App() {
       .then((responce) => {
         console.log(responce);
         cacheProducts(responce);
+        populateCartStructure(responce);
       })
       .catch((error) => setError(error))
       .finally(() => setLoading(false))
