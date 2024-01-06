@@ -33,7 +33,7 @@ function App() {
     } else {
       setLoading(false);
     }
-  },[])
+  },[populateCartStructure])
 
   if (error) {
     console.log(error);
