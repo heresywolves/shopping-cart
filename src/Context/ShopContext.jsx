@@ -11,16 +11,6 @@ const ShopContext = createContext(null);
 //   3: 0,
 // }
 
-const getDefaultCart = () => {
-  let cart = {}
-  console.log('products length: ' + products.length);
-  for (let i = 0; i < products.length; i++) {
-    cart[i] = 0;
-  }
-  console.log(cart);
-  return cart;
-}
-
 function ShopContextProvider({ children }) {
   const [cartItems, setCartItems] = useState(null);
 
