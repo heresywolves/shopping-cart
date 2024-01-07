@@ -34,7 +34,7 @@ const ShoppingCart = () => {
       <div className="shopping-cart-container">
         <h1>Shopping cart</h1>
         {(isCartEmpty()) ? (
-          <p>Your shopping cart is empty</p> 
+          <p className="empty-cart-message">Your shopping cart is empty</p> 
         ):(
           <div className="added-products-container">
             {products.map((item) => {
