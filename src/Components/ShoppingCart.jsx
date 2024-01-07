@@ -20,7 +20,6 @@ const ShoppingCart = () => {
   }
 
   function handlePlaceOrder() {
-    console.log('handling place order');
     setIsOrderPlaced(true);
   }
 
