@@ -4,8 +4,10 @@ import { useContext, useEffect, useState } from "react";
 import products from "../products";
 import ProductCard from "./ProductCard";
 import calcCartTotal from "../utils/calcCartTotal";
+import Popup from "./Popup";
 
 const ShoppingCart = () => {
+  const [isOrderPlaced, setIsOrderPlaced] = useState(false);
 
   const { 
     cartItems,
@@ -17,6 +19,14 @@ const ShoppingCart = () => {
     nullifyQty(itemId);
   }
 
+  function handlePlaceOrder() {
+    console.log('handling place order');
+    setIsOrderPlaced(true);
+  }
+
+  function handleClosePopup() {
+    setIsOrderPlaced(false);
+  }
 
   return (
     <div>
@@ -37,8 +47,14 @@ const ShoppingCart = () => {
             }
           })}
           <p className="total">{'Total: $' + calcCartTotal()}</p>
+          <button onClick={handlePlaceOrder}>Place order</button>
         </div>
       )}
+      {(isOrderPlaced && 
+      <Popup 
+      content={'Your order has been placed'} 
+      closeAction={handleClosePopup}
+      />)}
     </div>
   )
 };
