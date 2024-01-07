@@ -1,5 +1,5 @@
 import { ShopContext } from "../Context/ShopContext";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import products from "../products";
 import ProductCard from "./ProductCard";
 import calcCartTotal from "../utils/calcCartTotal";

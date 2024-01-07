@@ -1,5 +1,4 @@
 import './App.css'
-import { Link } from 'react-router-dom'
 import { useContext, useEffect, useState } from 'react';
 import products from '../products';
 import cacheProducts from '../utils/cacheProducts';
