@@ -1,7 +1,9 @@
 import './ProductCard.css'
 import AddToCartButton from './AddToCartButton';
+import addZeroesToPrice from '../utils/addZeroesToPrice';
 
 function ProductCard({item}) {
+
   return (
     <div className="product-card" key={item.id}>
       <img src={item.image} alt={item.title + ' image'} />
@@ -10,7 +12,7 @@ function ProductCard({item}) {
         <p className='rating'>{'Rating: ' + item.rating.rate}</p>
         <p className='category'>{item.category}</p>
       </div>
-      <p className='price'><b>${item.price}</b></p>
+      <p className='price'><b>${addZeroesToPrice(item.price)}</b></p>
       <p className='description'>{item.description}</p>
       <AddToCartButton itemId={item.id} />
     </div>

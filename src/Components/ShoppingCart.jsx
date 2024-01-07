@@ -6,6 +6,7 @@ import calcCartTotal from "../utils/calcCartTotal";
 import Popup from "./Popup";
 import Header from "./Header";
 import './ShoppingCart.css'
+import addZeroesToPrice from "../utils/addZeroesToPrice";
 
 const ShoppingCart = () => {
   const [isOrderPlaced, setIsOrderPlaced] = useState(false);
@@ -50,7 +51,7 @@ const ShoppingCart = () => {
                 );
               }
             })}
-            <p className="total-price" >{'Total: $' + calcCartTotal()}</p>
+            <p className="total-price" >{'Total: $' + addZeroesToPrice(calcCartTotal())}</p>
             <button className="place-order-button" onClick={handlePlaceOrder}>Place order</button>
           </div>
         )}
