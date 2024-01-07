@@ -1,0 +1,12 @@
+.header {
+  width: 100vw;
+  padding: 30px 50px;
+  text-align: end;
+  background-color: black;
+  color: white;
+}
+
+.header a {
+  color: white;
+}
+

@@ -1,13 +1,14 @@
+import './Header.css'
 import { Link } from "react-router-dom";
 
 function Header({linkUrl}) {
   return (
-    <div className="header">
+    <header className="header">
       {(linkUrl === "cart") ? 
-      <Link to="cart">View cart</Link> :
+      <Link to="cart">Cart</Link> :
       <Link to="/">Back to shopping</Link> 
       }
-    </div>
+    </header>
   )
 }
 

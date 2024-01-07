@@ -1,0 +1,8 @@
+.products-container {
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}

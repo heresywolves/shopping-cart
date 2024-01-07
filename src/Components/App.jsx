@@ -45,12 +45,14 @@ function App() {
   return (
     <div>
       <Header linkUrl={'cart'}/>
-      <h1>Main page</h1>
-      {products.map((item) => {
-        return (
-          <ProductCard key={item.id} item={item} />
-        )
-      })}
+      <h1>Catalog</h1>
+      <div className='products-container'>
+        {products.map((item) => {
+          return (
+            <ProductCard key={item.id} item={item} />
+          )
+        })}
+      </div>
     </div>
   )
 }

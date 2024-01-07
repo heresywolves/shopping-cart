@@ -30,8 +30,8 @@ const ShoppingCart = () => {
 
   return (
     <div>
-      <h1>Shopping cart</h1>
       <Header linkUrl={'/'}/>
+      <h1>Shopping cart</h1>
       {(isCartEmpty()) ? (
         <p>Your shopping cart is empty</p> 
       ):(
