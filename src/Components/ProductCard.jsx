@@ -6,10 +6,12 @@ function ProductCard({item}) {
     <div className="product-card" key={item.id}>
       <img src={item.image} alt={item.title + ' image'} />
       <h3>{item.title}</h3>
-      <p>{item.category}</p>
-      <p><b>${item.price}</b></p>
-      <p>{item.description}</p>
-      <p>{'Rating: ' + item.rating.rate}</p>
+      <div className='sub-container'>
+        <p className='rating'>{'Rating: ' + item.rating.rate}</p>
+        <p className='category'>{item.category}</p>
+      </div>
+      <p className='price'><b>${item.price}</b></p>
+      <p className='description'>{item.description}</p>
       <AddToCartButton itemId={item.id} />
     </div>
   )

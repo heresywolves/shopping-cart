@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { ShopContext } from "../Context/ShopContext";
 import { useContext, useEffect, useState } from "react";
 import products from "../products";

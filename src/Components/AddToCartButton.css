@@ -1,0 +1,47 @@
+button{
+  cursor: pointer;
+  height: 60px;
+  background-color: rgb(91, 130, 91);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  min-width: 40px;
+  font-weight: 900;
+  font-size: 1.2em;
+  border: 1px black solid;
+}
+
+
+.qty-input-wrapper .left-button, .qty-input-wrapper .right-button {
+  background-color: rgb(255, 255, 0);
+  color: black;
+}
+
+.qty-input-wrapper .left-button {
+  border-radius: 5px 0px 0px 5px;
+}
+
+
+.qty-input-wrapper .right-button {
+  border-radius: 0px 5px 5px 0px;
+}
+
+.qty-input-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  width: 100%;
+  border-radius: 0;
+  border: 0;
+  appearance: none;
+  -moz-appearance: textfield;
+  padding-left: 20px;
+  font-size: 1.2em;
+  font-weight: 900;
+  text-align: center;
+  background-color: rgb(242, 242, 242);
+  border: 1px solid black;
+}

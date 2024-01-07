@@ -1,5 +1,6 @@
 import { ShopContext } from "../Context/ShopContext";
 import { useContext } from "react";
+import './AddToCartButton.css'
 
 
 function AddToCartButton({itemId}) {
@@ -37,9 +38,9 @@ function AddToCartButton({itemId}) {
       {(itemQty == 0) ?
       (<button onClick={handleAddToCart}>Add to Cart</button>):
       (<div className="qty-input-wrapper">
-        <button onClick={handleSubtractFromCart}> - </button>
+        <button className="left-button" onClick={handleSubtractFromCart}> - </button>
         <input type="number" onChange={handleInputChange} value={itemQty}/>
-        <button onClick={handleAddToCart}> + </button>
+        <button className="right-button" onClick={handleAddToCart}> + </button>
       </div>)
       }
     </>
