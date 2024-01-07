@@ -2,6 +2,7 @@ import './Header.css'
 import { Link } from "react-router-dom";
 import { ShopContext } from '../Context/ShopContext';
 import { useContext } from 'react';
+import SmallRedDot from './SmallRedDot';
 
 function Header({linkUrl}) {
   const { cartItems } = useContext(ShopContext);
@@ -20,7 +21,9 @@ function Header({linkUrl}) {
     <header className="header">
       {(linkUrl === "cart") ? 
       <Link to="cart">
-        Cart {(addedItemsCount > 0) && (<span>{'(' + addedItemsCount+ ')'}</span>)}
+        {(addedItemsCount > 0) && (<SmallRedDot/>)}
+        Cart 
+        {(addedItemsCount > 0) && (<span>{'(' + addedItemsCount+ ')'}</span>)}
       </Link>:
       <Link to="/">Back to shopping</Link> 
       }
