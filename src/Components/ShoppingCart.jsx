@@ -5,6 +5,7 @@ import ProductCard from "./ProductCard";
 import calcCartTotal from "../utils/calcCartTotal";
 import Popup from "./Popup";
 import Header from "./Header";
+import './ShoppingCart.css'
 
 const ShoppingCart = () => {
   const [isOrderPlaced, setIsOrderPlaced] = useState(false);
@@ -30,30 +31,35 @@ const ShoppingCart = () => {
   return (
     <div>
       <Header linkUrl={'/'}/>
-      <h1>Shopping cart</h1>
-      {(isCartEmpty()) ? (
-        <p>Your shopping cart is empty</p> 
-      ):(
-        <div>
-          {products.map((item) => {
-            if (cartItems[item.id] > 0) {
-              return (
-                <div key={item.id}>
-                  <ProductCard className="product-card" key={item.id} item={item}/>
-                  <button onClick={() => handleRemoveItem(item.id)}>x Remove Item</button>
-                </div>
-              );
-            }
-          })}
-          <p className="total">{'Total: $' + calcCartTotal()}</p>
-          <button onClick={handlePlaceOrder}>Place order</button>
-        </div>
-      )}
-      {(isOrderPlaced && 
-      <Popup 
-      content={'Your order has been placed'} 
-      confirmAction={handleClosePopup}
-      />)}
+      <div className="shopping-cart-container">
+        <h1>Shopping cart</h1>
+        {(isCartEmpty()) ? (
+          <p>Your shopping cart is empty</p> 
+        ):(
+          <div className="added-products-container">
+            {products.map((item) => {
+              if (cartItems[item.id] > 0) {
+                return (
+                  <div className="product-card-container" key={item.id}>
+                    <ProductCard className="product-card" key={item.id} item={item}/>
+                    <button 
+                    className="remove-item-button" 
+                    onClick={() => handleRemoveItem(item.id)
+                    }>X</button>
+                  </div>
+                );
+              }
+            })}
+            <p className="total-price" >{'Total: $' + calcCartTotal()}</p>
+            <button className="place-order-button" onClick={handlePlaceOrder}>Place order</button>
+          </div>
+        )}
+        {(isOrderPlaced && 
+        <Popup 
+        content={'Your order has been placed'} 
+        confirmAction={handleClosePopup}
+        />)}
+      </div>
     </div>
   )
 };

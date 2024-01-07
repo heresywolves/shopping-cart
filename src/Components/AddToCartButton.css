@@ -8,13 +8,21 @@ button{
   min-width: 40px;
   font-weight: 900;
   font-size: 1.2em;
-  border: 1px black solid;
+  border: 1px rgb(110, 110, 110) solid;
 }
 
+button:hover {
+  background-color: rgb(84, 120, 84);
+}
 
 .qty-input-wrapper .left-button, .qty-input-wrapper .right-button {
-  background-color: rgb(255, 255, 0);
+  background-color: rgba(255, 255, 0, 0.644);
   color: black;
+}
+
+.qty-input-wrapper .left-button:hover,
+.qty-input-wrapper .right-button:hover {
+  background-color: rgb(245, 245, 0);
 }
 
 .qty-input-wrapper .left-button {
@@ -38,10 +46,11 @@ input {
   border: 0;
   appearance: none;
   -moz-appearance: textfield;
-  padding-left: 20px;
   font-size: 1.2em;
   font-weight: 900;
   text-align: center;
   background-color: rgb(242, 242, 242);
-  border: 1px solid black;
+  border: 1px rgb(110, 110, 110) solid;
+  border-left: none;
+  border-right: none;
 }
