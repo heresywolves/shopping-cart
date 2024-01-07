@@ -16,7 +16,7 @@ function App() {
     // Fetch data only if it hasn't been fetched and cached
     if (products.length === 0) {
       console.log('Cache is empty. Fetching product data...');
-      fetch('https://fakestoreapi.com/products?limit=3', { mode: "cors" })
+      fetch('https://fakestoreapi.com/products', { mode: "cors" })
       .then((responce) => {
         if (responce.status >= 400) {
           throw new Error('server error');
@@ -39,7 +39,7 @@ function App() {
     console.log(error);
     return <p>A network error was encoutered</p>
   }
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p className='loading-text'>Loading...</p>;
 
   return (
     <div>
