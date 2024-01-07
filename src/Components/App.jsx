@@ -5,6 +5,7 @@ import products from '../products';
 import cacheProducts from '../utils/cacheProducts';
 import ProductCard from './ProductCard';
 import { ShopContext } from '../Context/ShopContext';
+import Header from './Header';
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
         return responce.json()
       })
       .then((responce) => {
-        console.log(responce);
+        // console.log(responce);
         cacheProducts(responce);
         populateCartStructure(responce);
       })
@@ -43,8 +44,8 @@ function App() {
 
   return (
     <div>
+      <Header linkUrl={'cart'}/>
       <h1>Main page</h1>
-      <Link to="cart">View cart</Link>
       {products.map((item) => {
         return (
           <ProductCard key={item.id} item={item} />

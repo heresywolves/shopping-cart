@@ -5,6 +5,7 @@ import products from "../products";
 import ProductCard from "./ProductCard";
 import calcCartTotal from "../utils/calcCartTotal";
 import Popup from "./Popup";
+import Header from "./Header";
 
 const ShoppingCart = () => {
   const [isOrderPlaced, setIsOrderPlaced] = useState(false);
@@ -30,7 +31,7 @@ const ShoppingCart = () => {
   return (
     <div>
       <h1>Shopping cart</h1>
-      <Link to="/">Back to shopping</Link>
+      <Header linkUrl={'/'}/>
       {(isCartEmpty()) ? (
         <p>Your shopping cart is empty</p> 
       ):(
