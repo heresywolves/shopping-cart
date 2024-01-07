@@ -53,7 +53,7 @@ const ShoppingCart = () => {
       {(isOrderPlaced && 
       <Popup 
       content={'Your order has been placed'} 
-      closeAction={handleClosePopup}
+      confirmAction={handleClosePopup}
       />)}
     </div>
   )
