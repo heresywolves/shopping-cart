@@ -1,0 +1,32 @@
+.popup-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.1);
+}
+
+
+.popup-container .popup {
+  width: 400px;
+  background-color: white;
+  border-radius: 5px;
+  height: 200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateY(calc(50vh - 100px));
+}
+
+.popup-container .popup p{
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.popup-container .popup button{
+  width: 100%;
+}
